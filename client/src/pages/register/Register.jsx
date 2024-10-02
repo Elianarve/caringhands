@@ -3,7 +3,6 @@ import {useNavigate} from 'react-router-dom';
 import { useUserContext } from '../../context/UserContext';
 import { createUser } from '../../services/UserServices';
 import '../../components/modal/Modal.css';
-import '../register/Register.css';
 
 const Register = () => {
     const { setUserAuth } = useUserContext();
@@ -93,10 +92,19 @@ const Register = () => {
                                         className="form__input"
                                     />
                                 </label>
-                                <button type="submit" className="form__button">
-                                    Register
-                                </button>
-                                {error && <p className="error">{error}</p>}
+                                <div className="form-buttons">
+                                    <button type="submit" className="modal-button">
+                                        Register
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={closeRegisterModal}
+                                        className="modal-cancel-button"
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                                {error && <p className="form__message form__message--error">{error}</p>}
                             </form>
                         </div>
                     </div>

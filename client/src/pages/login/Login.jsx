@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import { useUserContext } from '../../context/UserContext';
 import { loginUser } from '../../services/UserServices';
-import '../register/Register.css';
+import '../../components/modal/Modal.css';
 
 const Login = () => {
   const navigate = useNavigate();
