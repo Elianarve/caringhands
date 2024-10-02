@@ -10,7 +10,7 @@ const cardsData = [
     text: 'Camina siempre que sea posible dentro de tus posibilidades y obtendrás beneficios ecónomicos dependendiendo de la distancia mensual recorrida',
   },
   {
-    title: 'MEJORAR TUS ANÁLISIS CLÍNICOS TE DA UN DOBLE BENEFICIO 🦾 $',
+    title: 'MEJORAR TUS ANÁLISIS CLÍNICOS TE DA UN DOBLE BENEFICIO',
     image: 'src/assets/Bene5.jpg',
     text: 'Sube tu análisis clínico a tu perfil en el apartado de Análisis y si el siguiente que subas pasados 3 o 6 meses tiene mejoras, obtendrás recompensa económica',
   },
@@ -22,7 +22,7 @@ const cardsData = [
   {
     title: 'LISTA DE BENEFICIOS',
     image: 'src/assets/Bene4.jpg',
-    text: 'Entre 100 y 140km mensuales = 50€, Entre 140 y 180km mensuales = 100€, Entre 190 y 300km mensuales = 150€',
+    text: '100-140km mensuales = 50€  , 140-180km mensuales = 100€, 190-300km mensuales = 150€',
   },
 ];
 
