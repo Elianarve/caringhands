@@ -16,7 +16,7 @@ export const getAllUsers = async () => {
 export const getUserById = async (id
 ) => {
     try {
-        const response = await axios.get(API_URL_AUTH + `users/${id}`);
+        const response = await axios.get(API_URL_AUTH + ${id});
         return response.data;
     } catch (error) {
         console.error(error);
