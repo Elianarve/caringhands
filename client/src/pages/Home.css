@@ -1,54 +1,13 @@
-/* Footer Styles */
-.footer {
-  background-color: #076e6d; /* Color de fondo */
-  color: #f2a160; /* Color del texto */
-  padding: 15px 0; /* Espaciado más pequeño para móviles */
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 100%; /* Ocupa todo el ancho de la pantalla en móviles */
-  margin: 0 auto;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 12px; /* Tamaño de texto más pequeño en móviles */
-  line-height: 1.5;
-}
-
-.social-media {
-  margin-top: 10px;
+.home-content{
+  margin-top: 15%;
   display: flex;
-  justify-content: center;
-  gap: 15px; /* Espaciado entre los íconos */
+  flex-direction: column;
+  width: 40%;
+  margin-left: 5%;
+  text-align: justify;
+  color: #113441;
 }
 
-.social-media a {
-  display: inline-block;
-}
-
-.icon {
-  width: 24px; /* Íconos más pequeños en móviles */
-  height: 24px;
-  transition: transform 0.3s ease;
-}
-
-.icon:hover {
-  transform: scale(1.2); /* Efecto hover para móviles, más pronunciado */
-}
-
-@media (min-width: 600px) {
-  .footer {
-      padding: 20px 0; /* Más espacio en pantallas más grandes */
-  }
-
-  .footer p {
-      font-size: 14px; /* Ajuste de texto en pantallas más grandes */
-  }
-
-  .icon {
-      width: 30px; /* Íconos más grandes en pantallas mayores a 600px */
-      height: 30px;
-  }
-}
+ .title-home{
+  margin-bottom: 8%;
+} 

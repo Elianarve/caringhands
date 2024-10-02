@@ -1,5 +1,6 @@
 .logo {
-    width: 9%;
+    width: 8%;
+    margin-left: 3%;
 }
 
 .navbar {
@@ -18,7 +19,7 @@
 .navLinks {
     list-style: none; 
     padding: 0;
-    margin: 0;
+    margin: 0 2%;
     display: none; 
     flex-direction: column;
     position: absolute;
@@ -35,7 +36,7 @@
     text-decoration: none;
     color: #f2a160;
     font-size: 20px;
-    font-weight: 400; 
+    font-weight: 600; 
     position: relative;
     transition: color 0.4s ease, font-weight 0.4s ease; 
 }
