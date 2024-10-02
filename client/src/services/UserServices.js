@@ -1,6 +1,8 @@
 import axios from "axios";
 
 const API_URL_AUTH = "http://localhost:5000/api/auth/";
+const API_URL_R = 'http://localhost:5000/auth/register';
+
 
 export const getAllUsers = async () => {
     try {
@@ -39,21 +41,22 @@ export const deleteUser = async (id) => {
     }
 };
 
-export const createUser = async (data) => {
-    try {
-        const response = await axios.post(API_URL_AUTH + "users", data);
-        return response.data;
-    } catch (error) {
-        console.error(error);
-    }
-};
-
 export const loginUser = async (data) => {
     try {
         const response = await axios.post(API_URL_AUTH + "login", data);
         return response.data;
     } catch (error) {
         console.error(error);
+    }
+};
+
+
+export const createUser = async (user) => {
+    try {
+        const response = await axios.post(API_URL_R, user);
+        return response.data;
+    } catch (error) {
+        throw new Error('Error al crear el usuario: ' + error.message);
     }
 };
 
