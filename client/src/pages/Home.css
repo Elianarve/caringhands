@@ -13,14 +13,14 @@
   }
   
   .logo img {
-    height: 40px; /* Tamaño reducido para pantallas móviles */
+    height: 40px; 
   }
   
   .navLinks {
-    display: none; /* Escondido en móvil, se muestra con el menú hamburguesa */
+    display: none; 
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Debajo del navbar */
+    top: 60px; 
     right: 0;
     width: 100%;
     background-color: #003340;
@@ -33,7 +33,7 @@
     text-decoration: none;
     color: #A4A5A4;
     font-size: 16px;
-    border-bottom: 1px solid #1E4F64; /* Separación entre links */
+    border-bottom: 1px solid #1E4F64; 
   }
   
   .hamburger {
@@ -57,24 +57,24 @@
     }
   
     .navLinks {
-      display: flex; /* Cambia a fila para pantallas grandes */
+      display: flex; 
       flex-direction: row;
-      position: static; /* Cambiamos a posición estática */
+      position: static;
       background-color: transparent;
       justify-content: flex-end;
       width: auto;
-      margin-left: auto; /* Alinea los enlaces a la derecha */
+      margin-left: auto; 
     }
   
     .navLink {
       margin: 0 20px;
       padding: 0;
       font-size: 18px;
-      border: none; /* Sin separación entre links en pantallas grandes */
+      border: none; 
     }
   
     .hamburger {
-      display: none; /* Escondido en pantallas grandes */
+      display: none; 
     }
   }
   

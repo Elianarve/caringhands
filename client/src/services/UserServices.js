@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const API_URL_AUTH = "http://localhost:5000/api/auth/";
+const API_URL_AUTH = "http://localhost:5000/auth/login";
 const API_URL_R = 'http://localhost:5000/auth/register';
 
 
 export const getAllUsers = async () => {
     try {
-        const response = await axios.get(API_URL_AUTH + "users");
+        const response = await axios.get(API_URL_AUTH);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -25,7 +25,7 @@ export const getUserById = async (id
 
 export const updateUser = async (id, data) => {
     try {
-        const response = await axios.put(API_URL_AUTH + `users/${id}`, data);
+        const response = await axios.put(API_URL_AUTH , data);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -43,7 +43,7 @@ export const deleteUser = async (id) => {
 
 export const loginUser = async (data) => {
     try {
-        const response = await axios.post(API_URL_AUTH + "login", data);
+        const response = await axios.post(API_URL_AUTH, data);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -51,7 +51,7 @@ export const loginUser = async (data) => {
 };
 
 
-export const createUser = async (user) => {
+export const createUser = async (u) => {
     try {
         const response = await axios.post(API_URL_R, user);
         return response.data;

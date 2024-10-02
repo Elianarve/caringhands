@@ -1,12 +1,9 @@
 import React from 'react';
-// import Nav from '../components/Nav'; // Asegúrate de que la ruta sea correcta
-// import Footer from '../components/Footer'; // Asegúrate de que la ruta sea correcta
-// import './Home.css'; // Importa el CSS específico para la página Home
+import './Home.css'; 
 
 const Home = () => {
   return (
     <div>
-      <Nav /> {/* Componente de navegación */}
       <div className="home-content">
         <h1>Bienvenido a Caring Hands</h1>
         <div className="presentation-text">
@@ -18,7 +15,6 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <Footer /> {/* Componente de pie de página */}
     </div>
   );
 };
