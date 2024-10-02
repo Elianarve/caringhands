@@ -11,7 +11,7 @@ const LayoutPrivate = () => {
             <main>
               <Outlet />
             </main>
-            <Chatbot/>
+            {/* <Chatbot/> */}
             <Footer />
           </>
         ) : ( 
