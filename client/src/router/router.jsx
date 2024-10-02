@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import LayoutPrivate from '../layout/LayoutPrivate';
 import Login from '../pages/login/Login';
 import Register from '../pages/register/Register';
+import Profile from '../pages/profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       path: '/register',
       element: <Register />
     },
+    {
+      path: 'profile',
+      element: <Profile />
+      }
     // {
     //   path: '/benefits',
     //   element: <Benefits />
@@ -40,11 +45,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home/>,
-      },
-      // {
-      //   path: 'profile',
-      //   element: <Profile />
-      // }
+      }
     ],
   }
 ]);
