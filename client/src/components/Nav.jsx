@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import logo from '../assets/logo.png';
-// import '../styles/Nav.css'; // Importa el CSS
+import logo from '../assets/images/caringHandsLogo.jpg';
+// import '../styles/Nav.css';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const Nav = () => {
 
   return (
     <nav className={`navbar ${isOpen ? 'active' : ''}`}>
-      {/* <img src={logo} alt="App Logo" className="logo" /> */}
+      {/* <img src={require('../assets/images/caringHandsLogo.jpg')}  alt="App Logo" className="logo" /> */}
       
       {/* Botón hamburguesa */}
       <button className="hamburger" onClick={toggleMenu}>

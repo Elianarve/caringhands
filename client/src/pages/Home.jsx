@@ -1,10 +1,10 @@
 import React from 'react';
-import './Home.css'; 
+import './Home.css'; // Importa el CSS específico para la página Home
 
 const Home = () => {
   return (
     <div>
-      <div className="home-content">
+          <div className="home-content">
         <h1>Bienvenido a Caring Hands</h1>
         <div className="presentation-text">
           <p>
@@ -15,6 +15,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+     
     </div>
   );
 };

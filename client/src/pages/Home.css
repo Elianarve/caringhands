@@ -1,140 +1,139 @@
 /* Navbar Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    background-color: #003340;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 60px;
-  }
-  
-  .logo img {
-    height: 40px; 
-  }
-  
-  .navLinks {
-    display: none; 
-    flex-direction: column;
-    position: absolute;
-    top: 60px; 
-    right: 0;
-    width: 100%;
-    background-color: #003340;
-    text-align: center;
-    z-index: 1000;
-  }
-  
-  .navLink {
-    padding: 15px 0;
-    text-decoration: none;
-    color: #A4A5A4;
-    font-size: 16px;
-    border-bottom: 1px solid #1E4F64; 
-  }
-  
-  .hamburger {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: #A4A5A4;
-    cursor: pointer;
-  }
-  
-  /* Styles for larger screens */
-  @media (min-width: 768px) {
-    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #076e6d; /* Color de fondo de la navbar */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+
+.logo img {
+  height: 40px; /* Tamaño reducido para pantallas móviles */
+}
+
+.navLinks {
+  display: none; /* Escondido en móvil, se muestra con el menú hamburguesa */
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Debajo del navbar */
+  right: 0;
+  width: 100%;
+  background-color: #0f4edd; /* Color de fondo para el menú desplegable */
+  text-align: center;
+  z-index: 1000;
+}
+
+.navLink {
+  padding: 15px 0;
+  text-decoration: none;
+  color: #f2a160; /* Color del texto del enlace */
+  font-size: 16px;
+  border-bottom: 1px solid #44b59d; /* Separación entre links */
+}
+
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #f2a160; /* Color del botón hamburguesa */
+  cursor: pointer;
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+  .navbar {
       padding: 10px 40px;
       height: 70px;
-    }
-  
-    .logo img {
+  }
+
+  .logo img {
       height: 50px;
-    }
-  
-    .navLinks {
-      display: flex; 
+  }
+
+  .navLinks {
+      display: flex; /* Cambia a fila para pantallas grandes */
       flex-direction: row;
       position: static;
       background-color: transparent;
       justify-content: flex-end;
       width: auto;
-      margin-left: auto; 
-    }
-  
-    .navLink {
+      margin-left: auto; /* Alinea los enlaces a la derecha */
+  }
+
+  .navLink {
       margin: 0 20px;
       padding: 0;
       font-size: 18px;
-      border: none; 
-    }
-  
-    .hamburger {
-      display: none; 
-    }
+      border: none; /* Sin separación entre links en pantallas grandes */
   }
-  
-  /* Mostrar el menú en móviles cuando el botón está activo */
-  .navbar.active .navLinks {
-    display: flex; /* Mostramos las opciones al hacer clic en el botón hamburguesa */
+
+  .hamburger {
+      display: none; /* Escondido en pantallas grandes */
   }
-  
-  /* Footer Styles */
+}
+
+/* Mostrar el menú en móviles cuando el botón está activo */
+.navbar.active .navLinks {
+  display: flex; /* Mostramos las opciones al hacer clic en el botón hamburguesa */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #076e6d; /* Color de fondo */
+  color: #f2a160; /* Color del texto */
+  padding: 15px 0; /* Espaciado más pequeño para móviles */
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 100%; /* Ocupa todo el ancho de la pantalla en móviles */
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 12px; /* Tamaño de texto más pequeño en móviles */
+  line-height: 1.5;
+}
+
+.social-media {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espaciado entre los íconos */
+}
+
+.social-media a {
+  display: inline-block;
+}
+
+.icon {
+  width: 24px; /* Íconos más pequeños en móviles */
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2); /* Efecto hover para móviles, más pronunciado */
+}
+
+@media (min-width: 600px) {
   .footer {
-    background-color: #003340; /* Color de fondo */
-    color: #A4A5A4; /* Color del texto */
-    padding: 15px 0; /* Espaciado más pequeño para móviles */
-    text-align: center;
-  }
-  
-  .footer-content {
-    max-width: 100%; /* Ocupa todo el ancho de la pantalla en móviles */
-    margin: 0 auto;
-  }
-  
-  .footer p {
-    margin: 0;
-    font-size: 12px; /* Tamaño de texto más pequeño en móviles */
-    line-height: 1.5;
-  }
-  
-  .social-media {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 15px; /* Espaciado entre los íconos */
-  }
-  
-  .social-media a {
-    display: inline-block;
-  }
-  
-  .icon {
-    width: 24px; /* Íconos más pequeños en móviles */
-    height: 24px;
-    transition: transform 0.3s ease;
-  }
-  
-  .icon:hover {
-    transform: scale(1.2); /* Efecto hover para móviles, más pronunciado */
-  }
-  
-  @media (min-width: 600px) {
-    .footer {
       padding: 20px 0; /* Más espacio en pantallas más grandes */
-    }
-  
-    .footer p {
+  }
+
+  .footer p {
       font-size: 14px; /* Ajuste de texto en pantallas más grandes */
-    }
-  
-    .icon {
+  }
+
+  .icon {
       width: 30px; /* Íconos más grandes en pantallas mayores a 600px */
       height: 30px;
-    }
   }
-  
+}

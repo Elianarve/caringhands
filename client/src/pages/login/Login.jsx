@@ -23,7 +23,6 @@ const Login = () => {
         localStorage.setItem("userId", formData.id);
         setUserAuth(result.data);
         setLoginModalOpen(false);
-        setLineSelectionModalOpen(true);
       }
     } catch (err) {
       setError("Login failed. Please try again.");
