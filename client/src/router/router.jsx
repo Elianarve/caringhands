@@ -6,6 +6,9 @@ import LayoutPrivate from '../layout/LayoutPrivate';
 import Login from '../pages/login/Login';
 import Register from '../pages/register/Register';
 import Profile from '../pages/profile/Profile';
+import Benefits from '../pages/benefits/Benefits';
+// import Contact from '../pages/contact/Contact';
+
 
 const router = createBrowserRouter([
   {
