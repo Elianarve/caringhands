@@ -1,5 +1,7 @@
 import { Outlet, Navigate } from "react-router-dom";
+import Nav from '../components/nav/Nav';
 // import { useUserContext } from "../../context/UserContext";
+
 const LayoutPrivate = () => {  
     const { userAuth } = useUserContext();
   
@@ -7,12 +9,12 @@ const LayoutPrivate = () => {
       <>
         {userAuth ? (
           <>
-            {/* <Nav /> */}
+            <Nav />
             <main>
               <Outlet />
             </main>
             {/* <Chatbot/> */}
-            {/* <Footer /> */}
+            <Footer />
           </>
         ) : ( 
           <Navigate to="/" />
