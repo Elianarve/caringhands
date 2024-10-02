@@ -10,9 +10,9 @@
 //     setIsOpen(!isOpen);
 //   };
 
-//   return (
-//     <nav className={`navbar ${isOpen ? 'active' : ''}`}>
-//       <img src={logo} alt="App Logo" className="logo" />
+  return (
+    <nav className={`navbar ${isOpen ? 'active' : ''}`}>
+      <img src={require('../assets/images/caringHandsLogo.jpg')}  alt="App Logo" className="logo" />
       
 //       {/* Botón hamburguesa */}
 //       <button className="hamburger" onClick={toggleMenu}>
