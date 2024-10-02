@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from '../components/Nav'; // Asegúrate de que la ruta sea correcta
-import Footer from '../components/Footer'; // Asegúrate de que la ruta sea correcta
-import './Home.css'; // Importa el CSS específico para la página Home
+// import Nav from '../components/Nav'; // Asegúrate de que la ruta sea correcta
+// import Footer from '../components/Footer'; // Asegúrate de que la ruta sea correcta
+// import './Home.css'; // Importa el CSS específico para la página Home
 
 const Home = () => {
   return (
