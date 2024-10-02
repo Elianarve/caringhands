@@ -60,7 +60,3 @@ export const createUser = async (user) => {
         throw new Error('Error al crear el usuario: ' + error.message);
     }
 };
-
-
-
-
