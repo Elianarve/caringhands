@@ -6,7 +6,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      <Nav /> {/* Componente de navegación */}
+      {/* <Nav /> Componente de navegación */}
       <div className="home-content">
         <h1>Bienvenido a Caring Hands</h1>
         <div className="presentation-text">
@@ -18,7 +18,7 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <Footer /> {/* Componente de pie de página */}
+      {/* <Footer /> Componente de pie de página */}
     </div>
   );
 };
