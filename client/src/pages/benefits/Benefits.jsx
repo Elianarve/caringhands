@@ -9,7 +9,7 @@ const cardsData = [
   },
   {
     title: 'MEJORAR TUS ANÁLISIS CLÍNICOS TE DA UN DOBLE BENEFICIO 🦾 $',
-    image: 'src/assets/Bene2.jpg',
+    image: 'src/assets/Bene5.jpg',
     text: 'Sube tu análisis clínico a tu perfil en el apartado de Análisis y si el siguiente que subas pasados 3 o 6 meses tiene mejoras, obtendrás recompensa económica',
   },
   {
@@ -18,7 +18,7 @@ const cardsData = [
     text: 'No necesitas el coche ni la moto para distancias cortas, evitando la contaminación en pequeñas distancias puedes conseguir grandes resultados para la naturaleza',
   },
   {
-    title: 'CONSULTA AQUÍ LOS BENEFICIOS',
+    title: 'LISTA DE BENEFICIOS',
     image: 'src/assets/Bene4.jpg',
     text: 'Entre 100 y 140km mensuales = 50€, Entre 140 y 180km mensuales = 100€, Entre 190 y 300km mensuales = 150€',
   },
@@ -44,7 +44,7 @@ const Benefits = () => {
             className="card" 
             key={index} 
             onClick={() => handleCardClick(card)}
-            style={{ backgroundImage: `url(${card.image})`,opacity: 0.5 }}
+            style={{ backgroundImage: `url(${card.image})`,opacity: 0.9 }}
           >
             <h2 className="card-title">{card.title}</h2>
           </div>
