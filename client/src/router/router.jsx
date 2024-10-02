@@ -1,4 +1,10 @@
 import React from 'react'
+import { createBrowserRouter } from 'react-router-dom';
+import LayoutPublic from '../layout/LayoutPublic';
+import Home from '../pages/Home';
+import LayoutPrivate from '../layout/LayoutPrivate';
+import Login from '../pages/login/Login';
+import Register from '../pages/register/Register';
 
 const router = createBrowserRouter([
   {
@@ -17,14 +23,14 @@ const router = createBrowserRouter([
       path: '/register',
       element: <Register />
     },
-    {
-      path: '/benefits',
-      element: <Benefits />
-    },
-    {
-      path: '/contact',
-      element: <Contact />
-    },
+    // {
+    //   path: '/benefits',
+    //   element: <Benefits />
+    // },
+    // {
+    //   path: '/contact',
+    //   element: <Contact />
+    // },
   ]
   },
   {
@@ -33,16 +39,12 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <AboutUs/>,
+        element: <Home/>,
       },
-      {
-        path:"home",
-        element: <Home/>
-      },
-      {
-        path: 'profile',
-        element: <Profile />
-      }
+      // {
+      //   path: 'profile',
+      //   element: <Profile />
+      // }
     ],
   }
 ]);
