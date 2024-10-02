@@ -1,28 +1,33 @@
 import React from 'react';
-// import '../styles/Footer.css'; 
+import '../footer/Footer.css';
+import ig from '../../assets/images/Instagram.svg';
+import email from '../../assets/images/Email.svg';
+import ws from '../../assets/images/WhatsApp.svg';
+import fcb from '../../assets/images/Facebook.svg';
+import github from '../../assets/images/Github.svg';
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; 2024 CaringHands - Todos los derechos reservados</p>
         <div className="social-media">
           <a href="https://github.com/tuUsuario" target="_blank" rel="noopener noreferrer">
-            <img src="/path/to/github-icon.png" alt="GitHub" className="icon" />
+            <img src={github} alt="GitHub" className="icon" />
           </a>
           <a href="https://facebook.com/tuUsuario" target="_blank" rel="noopener noreferrer">
-            <img src="/path/to/facebook-icon.png" alt="Facebook" className="icon" />
+            <img src={fcb} alt="Facebook" className="icon" />
           </a>
           <a href="https://instagram.com/tuUsuario" target="_blank" rel="noopener noreferrer">
-            <img src="/path/to/instagram-icon.png" alt="Instagram" className="icon" />
+            <img src={ig} alt="Instagram" className="icon" />
           </a>
           <a href="mailto:tuEmail@example.com">
-            <img src="/path/to/email-icon.png" alt="Email" className="icon" />
+            <img src={email} alt="Email" className="icon" />
           </a>
           <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">
-            <img src="/path/to/whatsapp-icon.png" alt="WhatsApp" className="icon" />
+            <img src={ws} alt="WhatsApp" className="icon" />
           </a>
         </div>
+        <p>&copy; 2024 CaringHands - Todos los derechos reservados</p>
       </div>
     </footer>
   );
