@@ -7,12 +7,12 @@ const LayoutPrivate = () => {
       <>
         {userAuth ? (
           <>
-            <Nav />
+            {/* <Nav /> */}
             <main>
               <Outlet />
             </main>
             {/* <Chatbot/> */}
-            <Footer />
+            {/* <Footer /> */}
           </>
         ) : ( 
           <Navigate to="/" />
