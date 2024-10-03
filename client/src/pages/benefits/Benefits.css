@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 .benefits-container {
   width: 100%;
@@ -75,8 +75,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.card-text {
-  white-space: pre-wrap;
+/* Efecto hover para el título */
+.title:hover {
+  color: #F2A160;
+  transform: scale(1.1);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Modal styles */
@@ -199,10 +202,3 @@
     font-size: 2.5rem;
   }
 }
-
-
-
-
-
-
-

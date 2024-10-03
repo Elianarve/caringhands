@@ -1,5 +1,6 @@
 .general-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
@@ -34,4 +35,68 @@
 .intro-video {
   width: 100%;
   height: auto;
+}
+
+/* Media Queries para Responsividad */
+
+@media (max-width: 1200px) {
+  .general-container {
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .home-content {
+    margin-right: 0; 
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    flex: 1; 
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .title-home {
+    font-size: 1.5rem; 
+    margin-top:25px;
+    justify-content:center;
+    align-items: center;
+  }
+
+  .paragraph-home {
+    font-size: 16px; 
+  }
+  .second-paragraph{
+    display:none;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .paragraph-home {
+    font-size: 14px; 
+    text-align: center; /* Centra el texto del párrafo */
+  }
+
+  .general-container {
+    padding: 10px; 
+    flex-direction: column;
+    align-items: center; /* Alinea elementos al centro */
+    margin: 20% 3% 2% 0;
+  }
+
+  .video-container {
+    flex: 1; 
+    margin-bottom: 10px;
+    display: flex; /* Asegura que el video esté en flexbox */
+    justify-content: center; /* Centra el video */
+  }
+
+  .home-content {
+    margin-right: 0; 
+    margin-bottom: 10px;
+    text-align: center; /* Centra el contenido de home-content */
+  }
 }
