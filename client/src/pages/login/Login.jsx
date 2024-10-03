@@ -48,7 +48,7 @@ const Login = () => {
   };
 
             return (
-                <>
+                <div className='all'>
                   {loginModalOpen && (
                     <div className="modal-overlay">
                       <div className="modal-content">
@@ -108,7 +108,7 @@ const Login = () => {
                       </div>
                     </div>
                   )}
-                </>
+                </div>
 
             );
         };
