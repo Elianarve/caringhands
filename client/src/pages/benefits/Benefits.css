@@ -1,32 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* General styles */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-} */
-
 .benefits-container {
   width: 100%;
   max-width: 1200px;
   padding: 20px;
   text-align: center;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .title {
-  font-size: 4.5rem;
-  margin-bottom: 40px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  margin-top: 100px;
 }
 
 .cards-container {
@@ -38,6 +28,8 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 15px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* Card styles */
@@ -55,7 +47,7 @@ body {
   transition: transform 0.3s ease;
   position: relative;
   overflow: hidden;
-  width: calc(33.33% - 20px);
+  width: calc(50% - 25px);
   max-width: 400px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -178,7 +170,11 @@ body {
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 4.5rem;
+  }
+
+  .benefits-container {
+    padding: 10px;
   }
 }
 
@@ -188,6 +184,11 @@ body {
   }
 }
 
-  
 
-  
+
+
+
+
+
+
+

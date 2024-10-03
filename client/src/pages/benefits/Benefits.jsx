@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import './Benefits.css';
 
-
-
 const cardsData = [
   {
     title: 'CAMINAR TIENE RECOMPENSA',
     image: 'src/assets/Bene1.jpg',
-    text: 'Camina siempre que sea posible dentro de tus posibilidades y obtendrás beneficios ecónomicos dependendiendo de la distancia mensual recorrida',
+    text: 'Camina siempre que sea posible dentro de tus posibilidades y obtendrás beneficios económicos dependiendo de la distancia mensual recorrida',
   },
   {
     title: 'MEJORAR TUS ANÁLISIS CLÍNICOS TE DA UN DOBLE BENEFICIO',
@@ -42,11 +40,11 @@ const Benefits = () => {
       <h1 className="title">Beneficios</h1>
       <div className="cards-container">
         {cardsData.map((card, index) => (
-          <div 
-            className="card" 
-            key={index} 
+          <div
+            className="card"
+            key={index}
             onClick={() => handleCardClick(card)}
-            style={{ backgroundImage: `url(${card.image})`,opacity: 0.9 }}
+            style={{ backgroundImage: `url(${card.image})`, opacity: 0.9 }}
           >
             <h2 className="card-title">{card.title}</h2>
           </div>
@@ -67,3 +65,7 @@ const Benefits = () => {
 };
 
 export default Benefits;
+
+
+
+
