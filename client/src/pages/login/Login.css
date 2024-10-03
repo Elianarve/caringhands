@@ -1,8 +1,18 @@
+.all{
+    min-height: calc(100vh - 210px);
+ }
+.form-buttons{
+    margin-right: 2.5%;
+}
+
 @media (max-width: 768px) {
    
     .modal-button {
      margin-left:0rem;
      
   }
+  .all{
+    min-height: calc(100vh - 40px);
+ }
     
   }

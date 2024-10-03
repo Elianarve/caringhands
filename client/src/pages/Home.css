@@ -7,6 +7,7 @@
   margin: 10% 3% 2% 0;
   text-align: justify;
   color: #113441;
+  min-height: calc(100vh - 350px);
 }
 
 .home-content {
