@@ -48,7 +48,7 @@ const Register = () => {
     };
 
     return (
-        <>
+        <div className="all">
             {registerModalOpen && (
                 <div className="modal-overlay">
                     <div className="modal-content">
@@ -102,7 +102,7 @@ const Register = () => {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 
