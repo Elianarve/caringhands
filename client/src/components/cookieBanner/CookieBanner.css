@@ -1,0 +1,41 @@
+.cookie-banner {
+    position: fixed;
+    bottom: 17%;
+    left: 0;
+    right: 0;
+    background-color: #076E6D;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .cookie-banner button {
+    margin-left: 10px;
+    background-color: #f2a160;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .cookie-banner button:hover {
+    background-color: #ff4c4c;
+  }
+  
+  .visible {
+    display: flex;
+  }
+  /* Alineación específica para pantallas de escritorio */
+@media (min-width: 768px) {
+    .cookie-buttons {
+      justify-content: flex-start; /* Cambia a flex-start para alinear los botones a la izquierda */
+    }
+  }
+  
