@@ -10,7 +10,7 @@ import Profile from '../pages/profile/Profile';
 import Benefits from '../pages/benefits/Benefits';
 import Report from '../pages/profile/Report';
 import EditProfile from '../pages/profile/EditProfile';
-//import CreateProfile from '../pages/profile/CreateProfile'; 
+import CreateProfile from '../pages/profile/CreateProfile'; 
 
 const router = createBrowserRouter([
   {
@@ -48,10 +48,6 @@ const router = createBrowserRouter([
         element: <Profile />
       },
       {
-        path: 'profile/:id',
-        element: <Profile /> 
-      },
-      {
         path: 'editprofile/:id',
         element: <EditProfile />
       },
@@ -59,10 +55,10 @@ const router = createBrowserRouter([
         path: 'report/:id',
         element: <Report />
       },
-      // {
-      //   path: 'createprofile', 
-      //   element: <CreateProfile />
-      // },
+      {
+        path: 'createprofile',
+        element: <CreateProfile />
+      },
     ],
   }
 ]);

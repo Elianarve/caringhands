@@ -1,137 +1,165 @@
-import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { getProfileById, updateProfile } from '../../services/ProfileServices';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getProfileByUserId, updateProfile } from '../../services/ProfileServices';
+import '../../components/modal/Modal.css';
 
 const EditProfile = () => {
     const { id } = useParams();
-    const [data, setData] = useState('');
-    const { register, handleSubmit, setValue } = useForm();
+    const [formData, setFormData] = useState({
+        userId: '',
+        age: '',
+        weight: '',
+        sex: '',
+        height: '',
+        steps: ''
+    });
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [modalOpen, setModalOpen] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchProfile = async () => {
             try {
-                const data = await getProfileById(id);
-                setData(data);
-                setValue('name', data.name)
-                setValue('email', data.email)
-                setValue('age', data.age)
-                setValue('genre', data.genre)
-                setValue('weight', data.weight)
-                setValue('height', data.height)
-                setValue('steps', data.steps)
+                console.log(`Fetching profile for user ID: ${id}`);
+                const profile = await getProfileByUserId(id);
+                console.log('Profile data fetched:', profile);
+                setFormData(profile);
             } catch (error) {
-                console.error("Error al obtener los datos del meme:", error);
-                setLoading(false);
+                console.error('Error fetching profile data:', error);
+                setError('Error fetching profile data.');
             }
         };
+        fetchProfile();
+    }, [id]);
 
-        fetchData();
-    }, [id, setValue]);
-    const navigate = useNavigate();
-    const onSubmit = (data) => {
-        updateProfile(id, data)
-        navigate(-1)
-    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+        console.log(`Updated formData: ${name} = ${value}`);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            console.log('Submitting form data:', formData);
+            const result = await updateProfile(id, formData);
+            console.log('Update result:', result);
+            if (result.success) {
+                setSuccess(result.message);
+            } else {
+                setError(result.message);
+            }
+        } catch (error) {
+            console.error('An error occurred while updating the profile:', error);
+            setError('An error occurred while updating the profile.');
+        }
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return (
-        <div>
-            <div className="title">
-                <h2>Actualizar información</h2>
-            </div>
-
-            <div className="content"> 
-                <form id="formAddProfile" onSubmit={handleSubmit(onSubmit)}>
-                    <div>
-                        <label className="label">Nombre</label>
-                        <div>
-                            <input
-                                type="text"
-                                className="input"
-                                name='name'
-                                {...register('name', { required: true })}
-                            />
+        <>
+            {modalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button className="modal-close" onClick={closeModal}>
+                                &times;
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <h2 className="modal-title">Edit Profile</h2>
+                            <form onSubmit={handleSubmit} className="form">
+                                <input
+                                    type="hidden"
+                                    name="userId"
+                                    value={formData.userId}
+                                />
+                                <label className="form__label">
+                                    EDAD:
+                                    <input
+                                        type="number"
+                                        name="age"
+                                        value={formData.age}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    PESO:
+                                    <input
+                                        type="number"
+                                        name="weight"
+                                        value={formData.weight}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    SEXO:
+                                    <input
+                                        type="text"
+                                        name="sex"
+                                        value={formData.sex}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    ALTURA:
+                                    <input
+                                        type="number"
+                                        name="height"
+                                        value={formData.height}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    PASOS:
+                                    <input
+                                        type="number"
+                                        name="steps"
+                                        value={formData.steps}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <div className="form-buttons">
+                                    <button type="submit" className="modal-button">
+                                        EDITAR
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={closeModal}
+                                        className="modal-cancel-button"
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                                {error && (
+                                    <p className="form__message form__message--error">{error}</p>
+                                )}
+                                {success && (
+                                    <p className="form__message form__message--success">{success}</p>
+                                )}
+                            </form>
                         </div>
                     </div>
+                </div>
+            )}
+        </>
+    );
+};
 
-                    <div>
-                        <label className="label">email</label>
-                        <div>
-                            <label className="input">{data.email}</label>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label className="label">Edad</label>
-                        <div>
-                            <input
-                                type="number"
-                                className="input"
-                                name='age'
-                                {...register('age', { required: true })}
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <label className="label" >Sexo</label>
-                        <div >
-                            <select
-                                type="text"
-                                className="input"
-                                {...register('genre', { required: true })}>
-                                <option value="masculino">Masculino</option>
-                                <option value="femenino">Femenino</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label className="label">Peso en kilogramos </label>
-                        <div>
-                            <input
-                                type="number"
-                                className="input"
-                                name='weight'
-                                {...register('weight', { required: true })}
-                            />
-                        </div>
-                    </div>
-
-
-                    <div>
-                        <label className="label" >Altura en centimetros</label>
-                        <div >
-                            <input
-                                type="number"
-                                className="input"
-                                name='height'
-                                {...register('height', { required: true })}
-                            />
-                        </div>
-                    </div>
-
-                    <div>
-                        <label className="label" >Pasos realizados</label>
-                        <div >
-                            <input
-                                type="number"
-                                className="input"
-                                name='steps'
-                                {...register('steps', { required: true })}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="button-container">
-                        <input type="submit" value="GUARDAR" className="button"/>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    )
-}
-
-export default EditProfile
-
+export default EditProfile;

@@ -1,9 +1,7 @@
-import React, { useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../context/UserContext';
 import { createUser } from '../../services/UserServices';
-import '../../components/modal/Modal.css';
-import '../register/Register.css';
 
 const Register = () => {
     const { setUserAuth } = useUserContext();
@@ -11,9 +9,9 @@ const Register = () => {
     const [registerModalOpen, setRegisterModalOpen] = useState(true);
     const [error, setError] = useState('');
     const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      password: '',
+        name: '',
+        email: '',
+        password: '',
     });
 
     const handleSubmit = async (e) => {
@@ -23,10 +21,10 @@ const Register = () => {
 
             if (result && result.token) {
                 localStorage.setItem("token", result.token);
-                localStorage.setItem("userId", formData.id);
+                localStorage.setItem("userId", result.data.id); // Asegúrate de usar el ID correcto del resultado
                 setUserAuth(result.data);
                 setRegisterModalOpen(false);
-                navigate('/');
+                navigate(`/createprofile`); // Navegar a la ruta de creación de perfil
             }
         } catch (err) {
             setError("Registration failed. Please try again.");
@@ -58,10 +56,10 @@ const Register = () => {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <h2 className="modal-title">Register</h2>
+                            <h2 className="modal-title">REGISTRO</h2>
                             <form onSubmit={handleSubmit} className="form">
                                 <label htmlFor="name" className="form__label">
-                                    Name
+                                    Nombre
                                     <input
                                         type="text"
                                         name="name"
@@ -69,6 +67,10 @@ const Register = () => {
                                         value={formData.name}
                                         onChange={handleChange}
                                         className="form__input"
+                                        required
+                                        autoFocus
+                                        autoComplete="off"
+                                        placeholder="Nombre"
                                     />
                                 </label>
                                 <label htmlFor="email" className="form__label">
@@ -80,10 +82,14 @@ const Register = () => {
                                         value={formData.email}
                                         onChange={handleChange}
                                         className="form__input"
+                                        required
+                                        placeholder="Email"
+                                        autoComplete="off"
+                                        autoFocus
                                     />
                                 </label>
                                 <label htmlFor="password" className="form__label">
-                                    Password
+                                    Contraseña
                                     <input
                                         type="password"
                                         name="password"
@@ -91,12 +97,25 @@ const Register = () => {
                                         value={formData.password}
                                         onChange={handleChange}
                                         className="form__input"
+                                        required
+                                        placeholder="Contraseña"
+                                        autoComplete="off"
+                                        autoFocus
                                     />
                                 </label>
-                                <button type="submit" className="form__button">
-                                    Register
-                                </button>
-                                {error && <p className="error">{error}</p>}
+                                <div className="form-buttons">
+                                    <button type="submit" className="modal-button">
+                                        Registro
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={closeRegisterModal}
+                                        className="modal-cancel-button"
+                                    >
+                                        Cancelar
+                                    </button>
+                                </div>
+                                {error && <p className="form__message form__message--error">{error}</p>}
                             </form>
                         </div>
                     </div>

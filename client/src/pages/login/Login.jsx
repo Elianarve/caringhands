@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import { useUserContext } from '../../context/UserContext';
 import { loginUser } from '../../services/UserServices';
-import '../register/Register.css';
-import './Login.css'
+// import '../register/Register.css';
+// import './Login.css'
+
+import '../../components/modal/Modal.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -56,7 +58,7 @@ const Login = () => {
                           </button>
                         </div>
                         <div className="modal-body"> 
-                        <h2 className="modal-title">Login</h2>
+                        <h2 className="modal-title">LOGIN</h2>
                           <form onSubmit={handleSubmit} className="form">
                             <label htmlFor="email" className="form__label">
                                 EMAIL
