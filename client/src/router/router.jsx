@@ -8,6 +8,7 @@ import Register from '../pages/register/Register';
 import Profile from '../pages/profile/Profile';
 import Benefits from '../pages/benefits/Benefits';
 import Report from '../pages/profile/Report';
+import EditProfile from '../pages/profile/EditProfile';
 // import Contact from '../pages/contact/Contact';
 
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     {
       path: 'profile/:id',
       element: <Profile />
+    },
+    {
+      path: 'editprofile/:id',
+      element: <EditProfile />
     },
     {
       path: 'report/:id',

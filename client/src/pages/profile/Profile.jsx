@@ -46,19 +46,43 @@ const Profile = () => {
                     <div className="modal-body" >
                         <div>
                             <label htmlFor="age" className="form__label">Edad</label>
-                            <input type="text" className="form__input" id="age" defaultValue={data.age} disabled></input>
+                            <input
+                             type="text"
+                             className="form__input"
+                             id="age"
+                             defaultValue={data.age}
+                             disabled
+                             />
                         </div>
                         <div>
                             <label htmlFor="genre" className="form__label">Sexo</label>
-                            <input type="text" className="form__input" id="genre" defaultValue={data.genre} disabled></input>
+                            <input
+                             type="text"
+                             className="form__input"
+                             id="genre"
+                             defaultValue={data.genre}
+                             disabled
+                             />
                         </div>
                         <div>
                             <label htmlFor="weight" className="form__label">Peso en kg</label>
-                            <input type="text" className="form__input" id="weight" defaultValue={data.weight} disabled></input>
+                            <input
+                             type="text"
+                             className="form__input"
+                             id="weight"
+                             defaultValue={data.weight}
+                             disabled
+                             />
                         </div>
                         <div>
                             <label htmlFor="height" className="form__label">Altura en cm</label>
-                            <input type="text" className="form__input" id="height" defaultValue={data.height} disabled></input>
+                            <input
+                             type="text"
+                             className="form__input"
+                             id="height"
+                             defaultValue={data.height}
+                             disabled
+                             />
                         </div>
                         <div>
                         <Link to={`/login`}><button className="form__button" >Actualizar información</button></Link>
