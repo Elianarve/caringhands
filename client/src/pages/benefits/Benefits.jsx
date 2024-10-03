@@ -20,7 +20,7 @@ const cardsData = [
   {
     title: 'LISTA DE BENEFICIOS',
     image: 'src/assets/Bene4.jpg',
-    text: '100-140km mensuales = 50€  , 140-180km mensuales = 100€, 190-300km mensuales = 150€',
+    text: '10 km equivalen a 5 puntos                    10 puntos = 1 entrada al cine               15 puntos = 1 entrada al museo                                   25 puntos = 1 entrada al teatro              30 puntos = 1 entrada a la opera',
   },
 ];
 
@@ -55,7 +55,7 @@ const Benefits = () => {
         <div className="modal" onClick={handleClose}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedCard.title}</h2>
-            <p>{selectedCard.text}</p>
+            <p className='card-text'>{selectedCard.text}</p>
             <button className="close-btn" onClick={handleClose}>Cerrar</button>
           </div>
         </div>
