@@ -4,9 +4,9 @@
       "name": "Fernando",
       "age": "42",
       "genre": "masculino",
-      "weight": "60",
-      "height": "166",
-      "steps": "1000000",
+      "weight": "80",
+      "height": "170",
+      "steps": "100000",
       "email": "fernando@gmail.com",
       "id": "1"
     }
