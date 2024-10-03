@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useUserContext } from '../../context/UserContext';
 import logo from '../../assets/images/logotipo.png';
 import '../nav/Nav.css';
@@ -7,7 +7,6 @@ import '../nav/Nav.css';
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { userAuth, setUserAuth } = useUserContext();
-  const history = useHistory();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

@@ -1,112 +1,98 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
-import { getProfileById } from '../../services/ProfileServices';
-import { Link } from 'react-router-dom';
+import { useParams, useNavigate } from "react-router-dom";
+import { createProfile, getProfileById } from '../../services/ProfileServices';
 
 const Profile = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [formData, setFormData] = useState({
+        age: '',
+        weight: '',
+        sex: '',
+        height: ''
+    });
 
     useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            setError(null);
+        if (id) {
+            const fetchData = async () => {
+                setIsLoading(true);
+                setError(null);
 
-            try {
-                const data = await getProfileById(id);
-                setData(data);
-            } catch (error) {
-                setError(error);
-                console.error("Error al obtener datos del usuario", error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
+                try {
+                    const data = await getProfileById(id);
+                    setData(data);
+                } catch (error) {
+                    setError(error);
+                    console.error("Error al obtener datos del usuario", error);
+                } finally {
+                    setIsLoading(false);
+                }
+            };
 
-        fetchData();
+            fetchData();
+        } else {
+            setIsLoading(false);
+        }
     }, [id]);
 
-    if (isLoading) {
-        return <div>Cargando perfil...</div>;
-    }
-    if (error) {
-        return <div>Error al cargar el perfil: {error.message}</div>;
-    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await createProfile(formData);
+            alert('Perfil creado exitosamente');
+            navigate(`/profile/${id}`);
+        } catch (error) {
+            setError(error);
+            console.error("Error al crear el perfil", error);
+        }
+    };
 
-    
+    if (isLoading) return <p>Cargando...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+
     return (
-        <div >
-           
-           <div className="title" >
-            <h3>Bienvenido {data.name}, tu información es la siguiente:</h3>
-            </div>
-
-            <div className="content">
-                <form>
-                    <div >
-                        <div>
-                            <label htmlFor="age" className="label">Edad</label>
-                            <input
-                             type="text"
-                             className="input"
-                             id="age"
-                             defaultValue={data.age}
-                             disabled
-                             />
-                        </div>
-                        <div>
-                            <label htmlFor="genre" className="label">Sexo</label>
-                            <input
-                             type="text"
-                             className="input"
-                             id="genre"
-                             defaultValue={data.genre}
-                             disabled
-                             />
-                        </div>
-                        <div>
-                            <label htmlFor="weight" className="label">Peso en kg</label>
-                            <input
-                             type="text"
-                             className="input"
-                             id="weight"
-                             defaultValue={data.weight}
-                             disabled
-                             />
-                        </div>
-                        <div>
-                            <label htmlFor="height" className="label">Altura en cm</label>
-                            <input
-                             type="text"
-                             className="input"
-                             id="height"
-                             defaultValue={data.height}
-                             disabled
-                             />
-                        </div>
-                        <div>
-                            <label htmlFor="height" className="label">Pasos</label>
-                            <input
-                             type="text"
-                             className="input"
-                             id="height"
-                             defaultValue={data.steps}
-                             disabled
-                             />
-                        </div>
-                        <div className="button-container">
-                        <Link to={`/editProfile/${id}`}><button className="button" >Actualizar información</button></Link>
-                        <Link to={`/report/${id}`}><button className="button" >Ver reporte</button></Link>
-                        <Link to={`/report/${id}`}><button className="button" >Escanea tu prueba de laboratorio</button></Link>
-                        </div>
-
+        <div>
+            {id ? (
+                <div>
+                    <h1>Perfil de {data.name}</h1>
+                    <p>Email: {data.email}</p>
+                    <p>Edad: {data.age}</p>
+                    <p>Peso: {data.weight}</p>
+                    <p>Sexo: {data.sex}</p>
+                    <p>Altura: {data.height}</p>
+                </div>
+            ) : (
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>Edad:</label>
+                        <input type="number" name="age" value={formData.age} onChange={handleChange} required />
                     </div>
-                    
+                    <div>
+                        <label>Peso:</label>
+                        <input type="number" name="weight" value={formData.weight} onChange={handleChange} required />
+                    </div>
+                    <div>
+                        <label>Sexo:</label>
+                        <input type="text" name="sex" value={formData.sex} onChange={handleChange} required />
+                    </div>
+                    <div>
+                        <label>Altura:</label>
+                        <input type="number" name="height" value={formData.height} onChange={handleChange} required />
+                    </div>
+                    <button type="submit">Crear Perfil</button>
                 </form>
-            </div>
+            )}
         </div>
     );
 };

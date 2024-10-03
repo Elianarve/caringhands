@@ -1,8 +1,7 @@
-import React, { useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../context/UserContext';
 import { createUser } from '../../services/UserServices';
-import '../../components/modal/Modal.css';
 
 const Register = () => {
     const { setUserAuth } = useUserContext();
@@ -10,9 +9,9 @@ const Register = () => {
     const [registerModalOpen, setRegisterModalOpen] = useState(true);
     const [error, setError] = useState('');
     const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      password: '',
+        name: '',
+        email: '',
+        password: '',
     });
 
     const handleSubmit = async (e) => {
@@ -22,10 +21,10 @@ const Register = () => {
 
             if (result && result.token) {
                 localStorage.setItem("token", result.token);
-                localStorage.setItem("userId", formData.id);
+                localStorage.setItem("userId", result.data.id); // Asegúrate de usar el ID correcto del resultado
                 setUserAuth(result.data);
                 setRegisterModalOpen(false);
-                navigate('/');
+                navigate(`/createprofile`); // Navegar a la ruta de creación de perfil
             }
         } catch (err) {
             setError("Registration failed. Please try again.");
