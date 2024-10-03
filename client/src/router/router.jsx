@@ -8,7 +8,6 @@ import Register from '../pages/register/Register';
 import Benefits from '../pages/benefits/Benefits';
 // import Contact from '../pages/contact/Contact';
 
-
 const router = createBrowserRouter([
   {
     path: '/',

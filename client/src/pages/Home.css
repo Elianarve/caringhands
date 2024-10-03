@@ -1,13 +1,36 @@
-.home-content{
-  margin-top: 15%;
+.general-container {
   display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-left: 5%;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 10% 3% 2% 0;
   text-align: justify;
   color: #113441;
 }
 
- .title-home{
-  margin-bottom: 8%;
-} 
+.home-content {
+  flex: 1;
+  margin-right: 60px;
+}
+
+.presentation-text {
+  margin-top: 20px;
+}
+
+.title-home {
+  font-size: 2rem;
+}
+
+.paragraph-home {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.video-container {
+  flex: 0 0 45%;
+}
+
+.intro-video {
+  width: 100%;
+  height: auto;
+}
