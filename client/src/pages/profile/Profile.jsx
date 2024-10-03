@@ -87,6 +87,16 @@ const Profile = () => {
                              disabled
                              />
                         </div>
+                        <div>
+                            <label htmlFor="height" className="label">Pasos</label>
+                            <input
+                             type="text"
+                             className="input"
+                             id="height"
+                             defaultValue={data.steps}
+                             disabled
+                             />
+                        </div>
                         <div className="button-container">
                         <Link to={`/editProfile/${id}`}><button className="button" >Actualizar información</button></Link>
                         <Link to={`/report/${id}`}><button className="button" >Ver reporte</button></Link>

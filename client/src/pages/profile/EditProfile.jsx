@@ -20,6 +20,7 @@ const EditProfile = () => {
                 setValue('genre', data.genre)
                 setValue('weight', data.weight)
                 setValue('height', data.height)
+                setValue('steps', data.steps)
             } catch (error) {
                 console.error("Error al obtener los datos del meme:", error);
                 setLoading(false);
@@ -106,6 +107,18 @@ const EditProfile = () => {
                                 className="input"
                                 name='height'
                                 {...register('height', { required: true })}
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label className="label" >Pasos realizados</label>
+                        <div >
+                            <input
+                                type="number"
+                                className="input"
+                                name='steps'
+                                {...register('steps', { required: true })}
                             />
                         </div>
                     </div>
