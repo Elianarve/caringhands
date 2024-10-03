@@ -48,10 +48,6 @@ const router = createBrowserRouter([
         element: <Profile />
       },
       {
-        path: 'profile/:id',
-        element: <Profile /> // Ruta visualización 
-      },
-      {
         path: 'editprofile/:id',
         element: <EditProfile />
       },
@@ -60,7 +56,7 @@ const router = createBrowserRouter([
         element: <Report />
       },
       {
-        path: 'createprofile', // Nueva ruta para crear perfiles sin parámetros
+        path: 'createprofile',
         element: <CreateProfile />
       },
     ],

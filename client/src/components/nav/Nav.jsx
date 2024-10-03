@@ -26,9 +26,7 @@ const Nav = () => {
 
   return (
     <nav className={`navbar ${isOpen ? 'active' : ''}`}>
-      <Link to="/">  {'/'}
       <img src={logo} alt="App Logo" className="logo" />
-      </Link>
       
       <button className="hamburger" onClick={toggleMenu}>
         &#9776;
@@ -53,7 +51,10 @@ const Nav = () => {
         ) : (
           <>
             <li>
-              <Link to={`/profile/${userAuth.id}`} className="navLink" onClick={closeMenu}>Perfil</Link>
+              <Link to={`/editprofile/${userAuth.id}`} className="navLink" onClick={closeMenu}>Perfil</Link>
+            </li>
+            <li>
+              <Link to={`/report/${userAuth.id}`} className="navLink" onClick={closeMenu}>Reporte</Link>
             </li>
             <li>
               <button className="navLink" onClick={handleLogout}>Logout</button>
