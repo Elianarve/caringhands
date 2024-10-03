@@ -81,7 +81,7 @@ const EditProfile = () => {
                                     value={formData.userId}
                                 />
                                 <label className="form__label">
-                                    Age:
+                                    EDAD:
                                     <input
                                         type="number"
                                         name="age"
@@ -92,7 +92,7 @@ const EditProfile = () => {
                                     />
                                 </label>
                                 <label className="form__label">
-                                    Weight:
+                                    PESO:
                                     <input
                                         type="number"
                                         name="weight"
@@ -103,7 +103,7 @@ const EditProfile = () => {
                                     />
                                 </label>
                                 <label className="form__label">
-                                    Sex:
+                                    SEXO:
                                     <input
                                         type="text"
                                         name="sex"
@@ -114,7 +114,7 @@ const EditProfile = () => {
                                     />
                                 </label>
                                 <label className="form__label">
-                                    Height:
+                                    ALTURA:
                                     <input
                                         type="number"
                                         name="height"
@@ -125,7 +125,7 @@ const EditProfile = () => {
                                     />
                                 </label>
                                 <label className="form__label">
-                                    Steps:
+                                    PASOS:
                                     <input
                                         type="number"
                                         name="steps"
@@ -137,7 +137,7 @@ const EditProfile = () => {
                                 </label>
                                 <div className="form-buttons">
                                     <button type="submit" className="modal-button">
-                                        Update Profile
+                                        EDITAR
                                     </button>
                                     <button
                                         type="button"
