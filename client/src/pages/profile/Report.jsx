@@ -68,7 +68,7 @@ const Report = () => {
                 <form>
                     <div className="form">
                         <div>
-                            <label htmlFor="age" className="label">Indice de masa corporal</label>
+                            <label htmlFor="age" className="label">Índice de masa corporal</label>
                             <input
                                 type="text"
                                 step="0.01"
@@ -113,7 +113,7 @@ const Report = () => {
                                     className="subinput"
                                     defaultValue={Math.round(data.steps * 0.687 / 10000 * 50 / 100)}
                                     disabled />
-                                <label htmlFor="genre" className="sublabel"> puntos logrado </label>
+                                <label htmlFor="genre" className="sublabel"> puntos logrados </label>
                                 </div>
                             </div>
                         </div>

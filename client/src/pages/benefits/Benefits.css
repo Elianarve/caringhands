@@ -75,11 +75,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Efecto hover para el título */
-.title:hover {
-  color: #F2A160;
-  transform: scale(1.1);
-  transition: color 0.3s ease, transform 0.3s ease;
+.card-text {
+  white-space: pre-wrap;
 }
 
 /* Modal styles */
