@@ -43,7 +43,7 @@ const Profile = () => {
 
             <div>
                 <form>
-                    <div className="modal-body" >
+                    <div >
                         <div>
                             <label htmlFor="age" className="form__label">Edad</label>
                             <input
@@ -85,31 +85,14 @@ const Profile = () => {
                              />
                         </div>
                         <div>
-                        <Link to={`/login`}><button className="form__button" >Actualizar información</button></Link>
-                        <Link to={`/login`}><button className="form__button" >Ver reporte</button></Link>
+                        <Link to={`/editProfile/${id}`}><button className="form__button" >Actualizar información</button></Link>
+                        <Link to={`/report/${id}`}><button className="form__button" >Ver reporte</button></Link>
                         </div>
 
                     </div>
                     
                 </form>
             </div>
-
-            {/* <div>
-                <h3>TU INDICE DE MASA CORPORAL ES:</h3>
-                <form>
-                    <div className="modal-body" >
-                        <div>
-                            <label htmlFor="age" className="form__label">IMC</label>
-                            <input type="text" step="0.01" className="form__input" id="age" defaultValue={data.weight/Math.pow(data.height/100,2)}></input>
-                        </div>
-                        <div>
-                            <label htmlFor="genre" className="form__label">COMPOSICIÓN CORPORAL</label>
-                            <input type="text" className="form__input" id="genre" defaultValue={data.height-100+((data.age/10)*0.9)}></input>
-                        </div>
-                    </div>
-                </form>
-            </div> */}
-
         </div>
     );
 };
