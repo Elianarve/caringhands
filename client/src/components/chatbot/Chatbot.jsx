@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { sendMessage } from '../../services/ChatbotServices';
-import './Chatbot.css'; 
+import ChatIcon from '../../assets/images/ChatBotIcon.svg';
+import './Chatbot.css';
 
 const Chatbot = () => {
   const [message, setMessage] = useState('');
@@ -28,9 +29,9 @@ const Chatbot = () => {
 
   return (
     <div>
-      <button className="chat-icon-button" onClick={() => setIsOpen(!isOpen)}>
-        Chat
-      </button>
+      <div className="chat-icon-button" onClick={() => setIsOpen(!isOpen)}>
+      <img src={ChatIcon} alt="Chatbot"className="chat-icon" />
+      </div>
       {isOpen && (
         <div className="chatbot-modal">
           <div className="chatbot-modal-content">

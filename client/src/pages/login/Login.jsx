@@ -55,7 +55,7 @@ const Login = () => {
                           </button>
                         </div>
                         <div className="modal-body"> 
-                        <h2 className="modal-title">Login</h2>
+                        <h2 className="modal-title">LOGIN</h2>
                           <form onSubmit={handleSubmit} className="form">
                             <label htmlFor="email" className="form__label">
                                 EMAIL
