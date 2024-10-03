@@ -2,12 +2,10 @@
     background-color: #076e6d; 
     color: #f2a160; 
     text-align: center;
-    margin-top: 7%;
    }
   
   .footer-content {
     max-width: 100%;
-    /* margin: 6px; */
   }
   
   .footer p {
