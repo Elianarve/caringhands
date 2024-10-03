@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useUserContext } from '../../context/UserContext';
 import { createProfile } from '../../services/ProfileServices';
-import './Profile.css';
+import '../../components/modal/Modal.css';
 
 const CreateProfile = () => {
     const { userAuth } = useUserContext();
@@ -15,6 +15,7 @@ const CreateProfile = () => {
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [modalOpen, setModalOpen] = useState(true);
 
     useEffect(() => {
         if (userAuth && userAuth.id) {
@@ -61,67 +62,96 @@ const CreateProfile = () => {
         }
     };
 
-    console.log('Form Data:', formData);
-
-    console.log('User Auth:', userAuth);
-
-    console.log('Error:', error);
-    console.log('Success:', success);
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return (
-        <div className="create-profile">
-            <h2>Create Profile</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="hidden"
-                    name="userId"
-                    value={formData.userId}
-                />
-                <label>
-                    Age:
-                    <input
-                        type="number"
-                        name="age"
-                        value={formData.age}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label>
-                    Weight:
-                    <input
-                        type="number"
-                        name="weight"
-                        value={formData.weight}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label>
-                    Sex:
-                    <input
-                        type="text"
-                        name="sex"
-                        value={formData.sex}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label>
-                    Height:
-                    <input
-                        type="number"
-                        name="height"
-                        value={formData.height}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <button type="submit">Create Profile</button>
-            </form>
-            {error && <p className="error">{error}</p>}
-            {success && <p className="success">{success}</p>}
-        </div>
+        <>
+            {modalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button className="modal-close" onClick={closeModal}>
+                                &times;
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <h2 className="modal-title">Create Profile</h2>
+                            <form onSubmit={handleSubmit} className="form">
+                                <input
+                                    type="hidden"
+                                    name="userId"
+                                    value={formData.userId}
+                                />
+                                <label className="form__label">
+                                    Age:
+                                    <input
+                                        type="number"
+                                        name="age"
+                                        value={formData.age}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    Weight:
+                                    <input
+                                        type="number"
+                                        name="weight"
+                                        value={formData.weight}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    Sex:
+                                    <input
+                                        type="text"
+                                        name="sex"
+                                        value={formData.sex}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    Height:
+                                    <input
+                                        type="number"
+                                        name="height"
+                                        value={formData.height}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <div className="form-buttons">
+                                    <button type="submit" className="modal-button">
+                                        Create Profile
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={closeModal}
+                                        className="modal-cancel-button"
+                                    >
+                                        Cancelar
+                                    </button>
+                                </div>
+                                {error && (
+                                    <p className="form__message form__message--error">{error}</p>
+                                )}
+                                {success && (
+                                    <p className="form__message form__message--success">{success}</p>
+                                )}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 
