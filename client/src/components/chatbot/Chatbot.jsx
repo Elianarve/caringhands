@@ -12,16 +12,22 @@ const Chatbot = () => {
     if (!message.trim()) return;
 
     const userMessage = { sender: 'user', text: message };
-    setMessages([...messages, userMessage]);
+    setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     try {
       const botResponse = await sendMessage(message);
-      const botMessage = { sender: 'bot', text: botResponse };
-      setMessages([...messages, userMessage, botMessage]);
+      console.log('Respuesta de la API:', botResponse);
+
+        const botMessage = {
+        sender: 'bot',
+        text: botResponse ? botResponse : 'No tengo respuesta',
+      };
+
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
       console.error('Error enviando el mensaje:', error);
       const errorMessage = { sender: 'bot', text: 'Hubo un error al procesar la solicitud.' };
-      setMessages([...messages, userMessage, errorMessage]);
+      setMessages((prevMessages) => [...prevMessages, errorMessage]);
     }
 
     setMessage('');
