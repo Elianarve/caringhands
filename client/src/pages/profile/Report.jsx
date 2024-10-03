@@ -1,93 +1,158 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
-import { getProfileById } from '../../services/ProfileServices';
-import '../../pages/profile/Profile.css';
+// src/pages/profile/CreateProfile.jsx
+import React, { useState, useEffect } from 'react';
+import { useUserContext } from '../../context/UserContext';
+import { createProfile } from '../../services/ProfileServices';
+import '../../components/modal/Modal.css';
 
-const Report = () => {
-    const { id } = useParams();
-    const [data, setData] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+const CreateProfile = () => {
+    const { userAuth } = useUserContext();
+    const [formData, setFormData] = useState({
+        userId: '',
+        age: '',
+        weight: '',
+        sex: '',
+        height: ''
+    });
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [modalOpen, setModalOpen] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            setError(null);
+        if (userAuth && userAuth.id) {
+            console.log('User Auth:', userAuth);
+            setFormData((prevData) => ({
+                ...prevData,
+                userId: userAuth.id
+            }));
+        }
+    }, [userAuth]);
 
-            try {
-                const data = await getProfileById(id);
-                setData(data);
-            } catch (error) {
-                setError(error);
-                console.error("Error al obtener datos del usuario", error);
-            } finally {
-                setIsLoading(false);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        console.log(`Field changed: ${name} = ${value}`);
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const result = await createProfile(formData);
+            console.log('Profile creation result:', result);
+
+            if (result.success) {
+                setSuccess(result.message);
+                setFormData({
+                    userId: '',
+                    age: '',
+                    weight: '',
+                    sex: '',
+                    height: ''
+                });
+            } else {
+                setError(result.message);
             }
-        };
 
-        fetchData();
-    }, [id]);
+        } catch (error) {
+            console.error('Error creating profile:', error);
+            setError('An error occurred while creating the profile.');
+        }
+    };
 
-    if (isLoading) {
-        return <div>Cargando perfil...</div>;
-    }
-    if (error) {
-        return <div>Error al cargar el perfil: {error.message}</div>;
-    }
-
-    const bmi = Math.round(data.weight / Math.pow(data.height / 100, 2));
-
-    let bmiDescription = "";
-  
-    if (bmi < 18.5) {
-      bmiDescription = "Bajo Peso";
-    } else if (bmi >= 18.5 && bmi < 25) {
-      bmiDescription = "Adecuado";
-    } else if (bmi >= 25 && bmi < 30) {
-      bmiDescription = "Sobrepeso";
-    } else {
-      bmiDescription = "Obesidad";
-    }
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return (
-        <div className="title"> 
-                <h3>Tu reporte es el siguiente:</h3>
-            <div className="content">
-                <form>
-                    <div className="form">
-                        <div>
-                            <label htmlFor="age" className="label">Indice de masa corporal</label>
-                            <input
-                             type="text"
-                             step="0.01"
-                             className="input"
-                             id="age"
-                             defaultValue={bmi}
-                             disabled/>
-                            <p className='text'> Descripción:  {bmiDescription} </p>
+        <>
+            {modalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button className="modal-close" onClick={closeModal}>
+                                &times;
+                            </button>
                         </div>
-                        
-                        <div>
-                            <label htmlFor="genre" className="label">Tu peso ideal en kilogramos</label>
-                            <input 
-                             type="text"
-                             className="input"
-                             defaultValue={data.height - 100 + ((data.age / 10) * 0.9)}
-                             disabled/>
-                        </div>
-                        <div>
-                            <label htmlFor="genre" className="label">Tu cantidad de pasos ({data.age}) equivale a: </label>
-                            <input 
-                             type="text"
-                             className="input"
-                             defaultValue={data.height - 100 + ((data.age / 10) * 0.9)}
-                             disabled/>
+                        <div className="modal-body">
+                            <h2 className="modal-title">Create Profile</h2>
+                            <form onSubmit={handleSubmit} className="form">
+                                <input
+                                    type="hidden"
+                                    name="userId"
+                                    value={formData.userId}
+                                />
+                                <label className="form__label">
+                                    Age:
+                                    <input
+                                        type="number"
+                                        name="age"
+                                        value={formData.age}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    Weight:
+                                    <input
+                                        type="number"
+                                        name="weight"
+                                        value={formData.weight}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    Sex:
+                                    <input
+                                        type="text"
+                                        name="sex"
+                                        value={formData.sex}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <label className="form__label">
+                                    Height:
+                                    <input
+                                        type="number"
+                                        name="height"
+                                        value={formData.height}
+                                        onChange={handleChange}
+                                        required
+                                        className="form__input"
+                                    />
+                                </label>
+                                <div className="form-buttons">
+                                    <button type="submit" className="modal-button">
+                                        Create Profile
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={closeModal}
+                                        className="modal-cancel-button"
+                                    >
+                                        Cancelar
+                                    </button>
+                                </div>
+                                {error && (
+                                    <p className="form__message form__message--error">{error}</p>
+                                )}
+                                {success && (
+                                    <p className="form__message form__message--success">{success}</p>
+                                )}
+                            </form>
                         </div>
                     </div>
-                </form>
-            </div>
-        </div>
-    )
-}
+                </div>
+            )}
+        </>
+    );
+};
 
-export default Report
+export default CreateProfile;

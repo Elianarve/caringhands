@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useUserContext } from '../../context/UserContext';
 import { createProfile } from '../../services/ProfileServices';
+import './Profile.css';
 
 const CreateProfile = () => {
     const { userAuth } = useUserContext();

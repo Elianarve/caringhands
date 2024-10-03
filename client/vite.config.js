@@ -11,5 +11,10 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
+    
+  },
+  test: {
+    globals: true, // Habilita el uso de describe y test sin necesidad de importar
+    environment: 'jsdom', // Usa jsdom como entorno para pruebas de componentes React
   },
 });
