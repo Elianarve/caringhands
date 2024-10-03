@@ -37,7 +37,7 @@ const Benefits = () => {
 
   return (
     <div className="benefits-container">
-      <h1 className="title">Beneficios</h1>
+      <h1 className="title-b">Beneficios</h1>
       <div className="cards-container">
         {cardsData.map((card, index) => (
           <div
