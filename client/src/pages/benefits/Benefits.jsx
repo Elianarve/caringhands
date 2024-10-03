@@ -5,17 +5,17 @@ const cardsData = [
   {
     title: 'CAMINAR TIENE RECOMPENSA',
     image: 'src/assets/Bene1.jpg',
-    text: 'Camina siempre que sea posible dentro de tus posibilidades y obtendrás beneficios económicos dependiendo de la distancia mensual recorrida',
+    text: 'Camina siempre que sea posible dentro de tus posibilidades y obtendrás puntos canjeables, dependiendo de la distancia recorrida',
   },
   {
     title: 'MEJORAR TUS ANÁLISIS CLÍNICOS TE DA UN DOBLE BENEFICIO',
     image: 'src/assets/Bene5.jpg',
-    text: 'Sube tu análisis clínico a tu perfil en el apartado de Análisis y si el siguiente que subas pasados 3 o 6 meses tiene mejoras, obtendrás recompensa económica',
+    text: 'Sube tu análisis clínico a tu perfil en el apartado de Análisis y si el siguiente que subas pasados 3 o 6 meses tiene mejoras, obtendrás puntos',
   },
   {
     title: 'APORTA TU GRANITO PARA SALVAR EL PLANETA',
     image: 'src/assets/Bene3.jpg',
-    text: 'No necesitas el coche ni la moto para distancias cortas, evitando la contaminación en pequeñas distancias puedes conseguir grandes resultados para la naturaleza',
+    text: 'No necesitas el coche ni la moto para distancias cortas, evitando la contaminación en pequeñas distancias puedes conseguir grandes resultados para el medio ambiente',
   },
   {
     title: 'LISTA DE BENEFICIOS',
