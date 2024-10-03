@@ -132,8 +132,9 @@
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   border-radius: 1.25rem;
   margin: 0.625rem;
-
-}
+  margin-left: 2rem;
+  margin-right: 2rem;
+  }
 
 .chat-input input {
   flex: 1;
