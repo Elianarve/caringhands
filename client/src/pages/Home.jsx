@@ -7,7 +7,7 @@ const Home = () => {
     <>
     <div className='general-container'>
         <div className="home-content">
-        <h1 className='title-home'>Bienvenido a Caring Hands</h1>
+        <h1 className='title-home'>Bienvenidos a Caring Hands</h1>
         <div className="presentation-text">
           <p className='paragraph-home'>
             Caring Hands es tu asistente de salud personal, diseñado para ofrecerte respuestas rápidas y precisas a tus dudas médicas a través de un chatbot inteligente. Además, te ayuda a mantener un registro de tu actividad diaria, especialmente de tus pasos, incentivándote con beneficios únicos como bonos culturales y exoneraciones de impuestos.

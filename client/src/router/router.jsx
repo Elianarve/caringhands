@@ -1,4 +1,5 @@
-import React from 'react'
+// src/router/Router.jsx
+import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import LayoutPublic from '../layout/LayoutPublic';
 import Home from '../pages/Home';
@@ -9,46 +10,30 @@ import Profile from '../pages/profile/Profile';
 import Benefits from '../pages/benefits/Benefits';
 import Report from '../pages/profile/Report';
 import EditProfile from '../pages/profile/EditProfile';
-// import Contact from '../pages/contact/Contact';
+//import CreateProfile from '../pages/profile/CreateProfile'; 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LayoutPublic />,
-    children:[
-    {
-      index: true,
-      element: <Home />
-    },
-    {
-      path: '/login',
-      element: <Login />
-    },
-    {
-      path: '/register',
-      element: <Register />
-    },
-    {
-      path: 'profile/:id',
-      element: <Profile />
-    },
-    {
-      path: 'editprofile/:id',
-      element: <EditProfile />
-    },
-    {
-      path: 'report/:id',
-      element: <Report />
-    },
-    {
-      path: '/benefits',
-      element: <Benefits />
-    },
-    // {
-    //   path: '/contact',
-    //   element: <Contact />
-    // },
-  ]
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
+      },
+      {
+        path: '/benefits',
+        element: <Benefits />
+      },
+    ]
   },
   {
     path: '/',
@@ -56,16 +41,30 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home/>,
+        element: <Home />,
+      },
+      {
+        path: 'profile',
+        element: <Profile />
+      },
+      {
+        path: 'profile/:id',
+        element: <Profile /> 
+      },
+      {
+        path: 'editprofile/:id',
+        element: <EditProfile />
+      },
+      {
+        path: 'report/:id',
+        element: <Report />
       },
       // {
-      //   path: 'profile',
-      //   element: <Profile />
-      // }
+      //   path: 'createprofile', 
+      //   element: <CreateProfile />
+      // },
     ],
   }
 ]);
 
 export default router;
-
-    
