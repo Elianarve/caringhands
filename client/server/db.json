@@ -2,13 +2,13 @@
   "health": [
     {
       "name": "Fernando",
-      "age": "40",
+      "age": "42",
       "genre": "masculino",
       "weight": "60",
-      "height": 170,
+      "height": "166",
+      "steps": "1000000",
       "email": "fernando@gmail.com",
-      "id": "1",
-      "steps":50
+      "id": "1"
     }
   ]
 }

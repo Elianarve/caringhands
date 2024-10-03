@@ -48,7 +48,7 @@ const EditProfile = () => {
                         <div>
                             <input
                                 type="text"
-                                className="form__input"
+                                className="input"
                                 name='name'
                                 {...register('name', { required: true })}
                             />
