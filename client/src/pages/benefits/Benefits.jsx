@@ -52,7 +52,7 @@ const Benefits = () => {
       </div>
 
       {selectedCard && (
-        <div className="modal" onClick={handleClose}>
+        <div className="modal" role='dialog' onClick={handleClose}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedCard.title}</h2>
             <p className='card-text'>{selectedCard.text}</p>
