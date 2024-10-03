@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Benefits from '../src/pages/benefits/Benefits';
-import { describe, it, expect } from 'vitest'; // Importa de vitest
+import { describe, it, expect } from 'vitest'; 
 
 describe('Benefits Component', () => {
     it('renders Benefits title', () => {
         render(<Benefits />);
         const titleElements = screen.getAllByRole('heading', { name: /Beneficios/i });
-        expect(titleElements.length).toBeGreaterThan(0); // Verifica que al menos un elemento esté presente
+        expect(titleElements.length).toBeGreaterThan(0); 
       });
 
   it('renders all cards', () => {
@@ -21,7 +21,7 @@ describe('Benefits Component', () => {
 
     cardTitles.forEach((title) => {
       const cardElement = screen.getByText(title);
-      expect(cardElement).toBeTruthy(); // Cambiado a toBeTruthy
+      expect(cardElement).toBeTruthy(); 
     });
   });
   
