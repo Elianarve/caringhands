@@ -5,7 +5,7 @@ const API_URL_PROFILE = "http://localhost:3000/health";
     export const getProfileById = async (id
     ) => {
         try {
-            const response = await axios.get(`${API_URL_PROFILE}${id}`);
+            const response = await axios.get(`${API_URL_PROFILE}/${id}`);
             return response.data;
         } catch (error) {
             console.error(error);

@@ -28,9 +28,9 @@ const router = createBrowserRouter([
       element: <Register />
     },
     {
-      path: 'profile',
+      path: 'profile/:id',
       element: <Profile />
-      }
+    }
     // {
     //   path: '/benefits',
     //   element: <Benefits />
@@ -48,7 +48,11 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home/>,
-      }
+      },
+      // {
+      //   path: 'profile',
+      //   element: <Profile />
+      // }
     ],
   }
 ]);
