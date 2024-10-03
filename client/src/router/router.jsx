@@ -7,6 +7,7 @@ import Login from '../pages/login/Login';
 import Register from '../pages/register/Register';
 import Profile from '../pages/profile/Profile';
 import Benefits from '../pages/benefits/Benefits';
+import Report from '../pages/profile/Report';
 // import Contact from '../pages/contact/Contact';
 
 
@@ -30,11 +31,15 @@ const router = createBrowserRouter([
     {
       path: 'profile/:id',
       element: <Profile />
-    }
-    // {
-    //   path: '/benefits',
-    //   element: <Benefits />
-    // },
+    },
+    {
+      path: 'report/:id',
+      element: <Report />
+    },
+    {
+      path: '/benefits',
+      element: <Benefits />
+    },
     // {
     //   path: '/contact',
     //   element: <Contact />

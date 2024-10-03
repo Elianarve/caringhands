@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { getProfileById } from '../../services/ProfileServices';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
     const { id } = useParams();
@@ -45,25 +46,31 @@ const Profile = () => {
                     <div className="modal-body" >
                         <div>
                             <label htmlFor="age" className="form__label">Edad</label>
-                            <input type="text" className="form__input" id="age" defaultValue={data.age}></input>
+                            <input type="text" className="form__input" id="age" defaultValue={data.age} disabled></input>
                         </div>
                         <div>
                             <label htmlFor="genre" className="form__label">Sexo</label>
-                            <input type="text" className="form__input" id="genre" defaultValue={data.genre}></input>
+                            <input type="text" className="form__input" id="genre" defaultValue={data.genre} disabled></input>
                         </div>
                         <div>
                             <label htmlFor="weight" className="form__label">Peso en kg</label>
-                            <input type="text" className="form__input" id="weight" defaultValue={data.weight}></input>
+                            <input type="text" className="form__input" id="weight" defaultValue={data.weight} disabled></input>
                         </div>
                         <div>
                             <label htmlFor="height" className="form__label">Altura en cm</label>
-                            <input type="text" className="form__input" id="height" defaultValue={data.height}></input>
+                            <input type="text" className="form__input" id="height" defaultValue={data.height} disabled></input>
                         </div>
+                        <div>
+                        <Link to={`/login`}><button className="form__button" >Actualizar información</button></Link>
+                        <Link to={`/login`}><button className="form__button" >Ver reporte</button></Link>
+                        </div>
+
                     </div>
+                    
                 </form>
             </div>
 
-            <div className="modal-body" >
+            {/* <div>
                 <h3>TU INDICE DE MASA CORPORAL ES:</h3>
                 <form>
                     <div className="modal-body" >
@@ -77,10 +84,7 @@ const Profile = () => {
                         </div>
                     </div>
                 </form>
-            </div>
-
-
-
+            </div> */}
 
         </div>
     );
