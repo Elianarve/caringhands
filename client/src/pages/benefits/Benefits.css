@@ -65,6 +65,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.card-text {
+  white-space: pre-wrap;
+}
+
 /* Modal styles */
 .modal {
   position: fixed;
