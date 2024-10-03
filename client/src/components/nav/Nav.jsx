@@ -16,7 +16,9 @@ const Nav = () => {
 
   return (
     <nav className={`navbar ${isOpen ? 'active' : ''}`}>
+      <Link to="/">  {'/'}
       <img src={logo} alt="App Logo" className="logo" />
+      </Link>
       
       {/* Botón hamburguesa */}
       <button className="hamburger" onClick={toggleMenu}>
