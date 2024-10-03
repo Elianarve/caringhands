@@ -7,7 +7,8 @@
       "weight": "60",
       "height": 170,
       "email": "fernando@gmail.com",
-      "id": "1"
+      "id": "1",
+      "steps":50
     }
   ]
 }
