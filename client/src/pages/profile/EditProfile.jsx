@@ -36,14 +36,14 @@ const EditProfile = () => {
 
     return (
         <div>
-            <div>
+            <div className="title">
                 <h2>Actualizar información</h2>
             </div>
 
-            <div  > 
+            <div className="content"> 
                 <form id="formAddProfile" onSubmit={handleSubmit(onSubmit)}>
                     <div>
-                        <label className="form__label">Nombre</label>
+                        <label className="label">Nombre</label>
                         <div>
                             <input
                                 type="text"
@@ -55,29 +55,29 @@ const EditProfile = () => {
                     </div>
 
                     <div>
-                        <label className="form__label">email</label>
+                        <label className="label">email</label>
                         <div>
-                            <label className="form__input">{data.email}</label>
+                            <label className="input">{data.email}</label>
                         </div>
                     </div>
 
                     <div>
-                        <label className="form__label">Edad</label>
+                        <label className="label">Edad</label>
                         <div>
                             <input
                                 type="number"
-                                className="form__input"
+                                className="input"
                                 name='age'
                                 {...register('age', { required: true })}
                             />
                         </div>
                     </div>
                     <div>
-                        <label className="form__label" >Sexo</label>
+                        <label className="label" >Sexo</label>
                         <div >
                             <select
                                 type="text"
-                                className="form__input"
+                                className="input"
                                 {...register('genre', { required: true })}>
                                 <option value="masculino">Masculino</option>
                                 <option value="femenino">Femenino</option>
@@ -86,11 +86,11 @@ const EditProfile = () => {
                     </div>
 
                     <div>
-                        <label className="form__label">Peso</label>
+                        <label className="label">Peso en kilogramos </label>
                         <div>
                             <input
                                 type="number"
-                                className="form__input"
+                                className="input"
                                 name='weight'
                                 {...register('weight', { required: true })}
                             />
@@ -99,19 +99,19 @@ const EditProfile = () => {
 
 
                     <div>
-                        <label className="form__label" >Altura</label>
+                        <label className="label" >Altura en centimetros</label>
                         <div >
                             <input
                                 type="number"
-                                className="form__input"
+                                className="input"
                                 name='height'
                                 {...register('height', { required: true })}
                             />
                         </div>
                     </div>
 
-                    <div>
-                        <input type="submit" value="Guardar información" className="form__button" />
+                    <div className="button-container">
+                        <input type="submit" value="GUARDAR" className="button"/>
                     </div>
                 </form>
             </div>

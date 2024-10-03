@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { getProfileById } from '../../services/ProfileServices';
+import '../../pages/profile/Profile.css';
 
 const Report = () => {
     const { id } = useParams();
@@ -34,19 +35,53 @@ const Report = () => {
         return <div>Error al cargar el perfil: {error.message}</div>;
     }
 
+    const bmi = Math.round(data.weight / Math.pow(data.height / 100, 2));
+
+    let bmiDescription = "";
+  
+    if (bmi < 18.5) {
+      bmiDescription = "Bajo Peso";
+    } else if (bmi >= 18.5 && bmi < 25) {
+      bmiDescription = "Adecuado";
+    } else if (bmi >= 25 && bmi < 30) {
+      bmiDescription = "Sobrepeso";
+    } else {
+      bmiDescription = "Obesidad";
+    }
+
     return (
-        <div>
-            <div>
-                <h3>TU INDICE DE MASA CORPORAL ES:</h3>
+        <div className="title"> 
+                <h3>Tu reporte es el siguiente:</h3>
+            <div className="content">
                 <form>
-                    <div className="modal-body" >
+                    <div className="form">
                         <div>
-                            <label htmlFor="age" className="form__label">IMC</label>
-                            <input type="text" step="0.01" className="form__input" id="age" defaultValue={data.weight / Math.pow(data.height / 100, 2)}></input>
+                            <label htmlFor="age" className="label">Indice de masa corporal</label>
+                            <input
+                             type="text"
+                             step="0.01"
+                             className="input"
+                             id="age"
+                             defaultValue={bmi}
+                             disabled/>
+                            <p className='text'> Descripción:  {bmiDescription} </p>
+                        </div>
+                        
+                        <div>
+                            <label htmlFor="genre" className="label">Tu peso ideal en kilogramos</label>
+                            <input 
+                             type="text"
+                             className="input"
+                             defaultValue={data.height - 100 + ((data.age / 10) * 0.9)}
+                             disabled/>
                         </div>
                         <div>
-                            <label htmlFor="genre" className="form__label">TU PESO IDEAL</label>
-                            <input type="text" className="form__input" id="genre" defaultValue={data.height - 100 + ((data.age / 10) * 0.9)}></input>
+                            <label htmlFor="genre" className="label">Tu cantidad de pasos ({data.age}) equivale a: </label>
+                            <input 
+                             type="text"
+                             className="input"
+                             defaultValue={data.height - 100 + ((data.age / 10) * 0.9)}
+                             disabled/>
                         </div>
                     </div>
                 </form>
