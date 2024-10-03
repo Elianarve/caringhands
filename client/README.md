@@ -2,19 +2,19 @@
 
 ## 📝 Descripción del Proyecto
 
-En un mundo donde la salud y el bienestar son cada vez más valorados, 🌿"Caring Hands" surge como una aplicación innovadora que combina tecnología, medicina y recompensas, todo con el objetivo de mejorar la calidad de vida de sus usuarios. Esta herramienta pone a tu disposición un conjunto de funcionalidades diseñadas para guiarte hacia una vida más saludable y activa, recompensando tus esfuerzos en el proceso. A continuación, te explicamos los cuatro pilares fundamentales que hacen de esta aplicación una opción única en su categoría.
+En un mundo donde la salud y el bienestar son cada vez más valorados, 🌿"Caring Hands" surge como una aplicación innovadora que combina tecnología, medicina y recompensas, con el objetivo de mejorar la calidad de vida de sus usuarios. Esta herramienta pone a tu disposición un conjunto de funcionalidades diseñadas para guiarte hacia una vida más saludable y activa, recompensando tus esfuerzos en el proceso. A continuación, te explicamos los cuatro pilares fundamentales que hacen de esta aplicación una opción única en su categoría.
 
 1. Asistente Virtual Experto en Medicina, Salud y Nutrición
 
 Uno de los puntos más fuertes de 🌿"Caring Hands" es su asistente virtual, un recurso de gran valor para quienes buscan información rigurosa y asesoramiento en temas de salud. Este asistente, respaldado por expertos en medicina, salud y nutrición, está diseñado para responder a preguntas relacionadas con una vida sana y ofrecer recomendaciones personalizadas basadas en tus necesidades. Desde consejos nutricionales hasta orientación sobre ejercicio físico o prevención de enfermedades, este asistente virtual es un aliado confiable en tu búsqueda de bienestar. La precisión y actualización constante de la información garantizan que los usuarios reciban respuestas de calidad y basadas en la ciencia médica más actualizada.
 
-2. Beneficios por Mejoras en Tus Análisis Clínicos
+2. Beneficios por Mejoras en tus Análisis Clínicos
 
-Otra característica clave de 🌿"Caring Hands" es la posibilidad de llevar un registro de tus avances en términos de salud a través del apartado “Mi Perfil”. Los usuarios pueden subir sus análisis clínicos y recibir un seguimiento personalizado. Pasados 3 a 6 meses, tienen la opción de volver a subir nuevos análisis, permitiendo a la aplicación evaluar las mejoras alcanzadas en su salud. En función de estos progresos, los usuarios obtendrán un beneficio económico aún por determinar, que podrán canjear en áreas relacionadas con su bienestar, como la compra de suplementos nutricionales, vitaminas y minerales, o incluso para participar en eventos culturales y deportivos. Este enfoque recompensa no solo el esfuerzo físico, sino también el cuidado de la salud integral, fomentando hábitos saludables a largo plazo.
+Otra característica de 🌿"Caring Hands" es la posibilidad de llevar un registro de tus avances en términos de salud a través del apartado “Mi Perfil”. Los usuarios pueden subir sus análisis clínicos y recibir un seguimiento personalizado. Pasados 3 a 6 meses, tienen la opción de volver a subir nuevos análisis, permitiendo a la aplicación evaluar las mejoras alcanzadas en su salud. En función de estos progresos, los usuarios obtendrán puntos, que podrán canjear en áreas relacionadas a eventos culturales y deportivos inicialmente. Este enfoque recompensa no solo el esfuerzo físico, sino también el cuidado de la salud integral, fomentando hábitos saludables a largo plazo.
 
-3. Recompensas por Kilómetros Recorridos
+3. Recompensas por kilómetros recorridos
 
-🌿"Caring Hands" también incentiva la actividad física a través de un sistema de recompensas basado en la distancia recorrida a pie. La aplicación registra los kilómetros que el usuario camina cada mes, promoviendo una vida activa. Según la distancia acumulada, los usuarios podrán recibir cheques-voucher que podrán gastar en productos relacionados con nutrición, cultura y deporte. Este sistema convierte la actividad física diaria en una oportunidad no solo de mejorar la salud, sino también de obtener beneficios tangibles que motivan a seguir en el camino del bienestar.
+🌿"Caring Hands" también incentiva la actividad física a través de un sistema de recompensas basado en la distancia recorrida a pie. La aplicación recibe el registro de los kilómetros que el usuario camina cada mes, promoviendo una vida activa. Según la distancia acumulada, los usuarios podrán recibir puntos que podrán intercambiar en productos relacionados con cultura y deporte. Este sistema convierte la actividad física diaria en una oportunidad no solo de mejorar la salud, sino también de obtener beneficios tangibles que motivan a seguir en el camino del bienestar.
 
 4. Resumen de Resultados Médicos con Inteligencia Artificial
 
@@ -23,7 +23,7 @@ Un cuarto pilar fundamental de 🌿"Caring Hands" es su capacidad para interpret
 
 ## 🚀 Características Principales
 
-🌿 Caring Hands es una aplicación de salud diseñada para mejorar el bienestar físico de los usuarios, promoviendo la sostenibilidad ambiental y alineada con los Objetivos de Desarrollo Sostenible.
+🌿 Caring Hands es una aplicación de salud diseñada para mejorar el bienestar físico de los usuarios, promoviendo la sostenibilidad ambiental alineada con los Objetivos de Desarrollo Sostenible.
 
 💡 Creatividad e Innovación: Enfrentamos los retos de la salud con un enfoque disruptivo, combinando tecnología de vanguardia con bienestar para ofrecer soluciones efectivas y personalizadas.
 
@@ -31,20 +31,20 @@ Un cuarto pilar fundamental de 🌿"Caring Hands" es su capacidad para interpret
 
 🔒 Seguridad y Rendimiento: Gestionamos los datos personales de manera segura y eficiente. Con pruebas unitarias continuas, ofrecemos una plataforma estable que prioriza la privacidad y la fiabilidad.
 
-📈 Escalabilidad Asegurada: La arquitectura flexible de 🌿Caring Hands está diseñada para crecer junto con las necesidades de los usuarios, permitiendo la adición de nuevas funcionalidades sin comprometer el rendimiento.
+📈 Escalabilidad Asegurada: La arquitectura flexible de 🌿"Caring Hands" está diseñada para crecer junto con las necesidades de los usuarios, permitiendo la adición de nuevas funcionalidades sin comprometer el rendimiento.
 
 ✅ Calidad y Fiabilidad: Realizamos pruebas rigurosas tanto en el frontend como en el backend, garantizando que la aplicación opere sin fallos y proporcione una experiencia fluida, eficiente y segura en todo momento.
 
 
 ## 🔧 Tecnologías Utilizadas
 
-🌿 Caring Hands es una aplicación cuidadosamente diseñada para ser funcional y escalable, siguiendo las mejores prácticas de desarrollo. La integración entre el frontend y backend es fluida, optimizada y eficiente gracias al uso de APIs bien estructuradas.
+🌿"Caring Hands" es una aplicación cuidadosamente diseñada para ser funcional y escalable, siguiendo las mejores prácticas de desarrollo. La integración entre el frontend y backend es fluida, optimizada y eficiente gracias al uso de APIs bien estructuradas.
 
 🎨 Frontend: Desarrollado con React, proporcionando una interfaz dinámica, interactiva y de alta performance, que permite una experiencia de usuario atractiva y rápida.
 
 🛠️ Backend: Implementado con Node.js y Express, para crear una arquitectura de servidor robusta, rápida y escalable que maneja las solicitudes y procesos del usuario de manera eficiente.
 
-💾 Base de Datos: Utilizamos mySQL, una base de datos relacional avanzada y altamente escalable, ideal para manejar grandes volúmenes de datos con seguridad y rendimiento.
+💾 Base de Datos: Utilizamos MySQL, una base de datos relacional avanzada y altamente escalable, ideal para manejar grandes volúmenes de datos con seguridad y rendimiento.
 
 🔗 APIs: Integración con APIs externas bien documentadas para asegurar una conectividad perfecta entre diversas fuentes de datos y servicios, expandiendo las capacidades de la aplicación.
 
@@ -66,6 +66,7 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
 
   	```bash
    	cd caringhands
+   cd client
 
 3. Instala las dependencias del backend:
 
@@ -112,9 +113,9 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
                   │    └── LayoutPublic.jsx 
                   ├── pages 
                   |    ├── Benefits.css
-                  |    ├── Benefits.jsx 
+                  |    ├── Benefits.jsx
                   │    ├── Home.css 
-                  │    ├── Home.jsx 
+                  │    ├── Home.jsx git status
                   │    ├── Login.jsx 
                   │    ├── Register.css 
                   │    └── Register.jsx 
@@ -205,4 +206,4 @@ Para más información o consultas, ¡no dudes en contactarnos!
 
 ________________________________________
 
-¡Gracias por contribuir a 🌿Caring Hands y ayudarnos a mejorar la salud y el bienestar de todos! 🌟
+¡Gracias por contribuir a 🌿"Caring Hands" y ayudarnos a mejorar la salud y el bienestar de todos! 🌟
