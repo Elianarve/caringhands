@@ -38,55 +38,69 @@ const Profile = () => {
 
     
     return (
-        <div>
+        <div >
+           
+           <div className="title" >
             <h3>Bienvenido {data.name}, tu información es la siguiente:</h3>
+            </div>
 
-            <div>
+            <div className="content">
                 <form>
                     <div >
                         <div>
-                            <label htmlFor="age" className="form__label">Edad</label>
+                            <label htmlFor="age" className="label">Edad</label>
                             <input
                              type="text"
-                             className="form__input"
+                             className="input"
                              id="age"
                              defaultValue={data.age}
                              disabled
                              />
                         </div>
                         <div>
-                            <label htmlFor="genre" className="form__label">Sexo</label>
+                            <label htmlFor="genre" className="label">Sexo</label>
                             <input
                              type="text"
-                             className="form__input"
+                             className="input"
                              id="genre"
                              defaultValue={data.genre}
                              disabled
                              />
                         </div>
                         <div>
-                            <label htmlFor="weight" className="form__label">Peso en kg</label>
+                            <label htmlFor="weight" className="label">Peso en kg</label>
                             <input
                              type="text"
-                             className="form__input"
+                             className="input"
                              id="weight"
                              defaultValue={data.weight}
                              disabled
                              />
                         </div>
                         <div>
-                            <label htmlFor="height" className="form__label">Altura en cm</label>
+                            <label htmlFor="height" className="label">Altura en cm</label>
                             <input
                              type="text"
-                             className="form__input"
+                             className="input"
                              id="height"
                              defaultValue={data.height}
                              disabled
                              />
                         </div>
                         <div>
-                        <Link to={`/editProfile/${id}`}><button className="form__button" >Actualizar información</button></Link>
-                        <Link to={`/report/${id}`}><button className="form__button" >Ver reporte</button></Link>
+                            <label htmlFor="height" className="label">Pasos</label>
+                            <input
+                             type="text"
+                             className="input"
+                             id="height"
+                             defaultValue={data.steps}
+                             disabled
+                             />
+                        </div>
+                        <div className="button-container">
+                        <Link to={`/editProfile/${id}`}><button className="button" >Actualizar información</button></Link>
+                        <Link to={`/report/${id}`}><button className="button" >Ver reporte</button></Link>
+                        <Link to={`/report/${id}`}><button className="button" >Escanea tu prueba de laboratorio</button></Link>
                         </div>
 
                     </div>
